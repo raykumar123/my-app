@@ -13,9 +13,6 @@ function ExpenseItem()
             <div>
                 <h2>Movies Rs 200</h2>
             </div>
-            <div>
-                <h2>Shoping Rs 500</h2>
-            </div>
             </div>
         );
     
