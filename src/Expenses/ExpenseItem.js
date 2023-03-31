@@ -4,24 +4,24 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const [amount, setAmount] = useState(props.amount);
+  const [title, setTitle] = useState(props.title);
   console.log('ExpenseItem evaluted by React');
  
   const clickHandler = () => {
-    setAmount('100$');
-    console.log(amount);
+    setTitle('Updated!');
+    console.log(title);
   };
 
   return (
     <Card className='expense-item'>
       <ExpenseDate date={props.date}/>
       <div className='expense-item_description'>
-        <h2>{props.title}</h2>
-        <div className='expense-item_price'>${amount}</div>
-        <button onClick={clickHandler}>Change Amount </button>
+        <h2>{title}</h2>
+        <div className='expense-item_price'>${props.amount}</div>
+        <button onClick={clickHandler}>Change Title </button>
       </div>
     </Card>
   );
 }
 
-export default ExpenseItem;
+export default ExpenseItem; 

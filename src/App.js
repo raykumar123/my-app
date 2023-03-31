@@ -1,5 +1,6 @@
 import Card from "./Expenses/UI/Card";
 import ExpenseItem from "./Expenses/ExpenseItem";
+import NewExpense from "./NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -25,7 +26,7 @@ const App = () => {
   ];
   return (
     <Card>
-      <h2>Let's get started!</h2>
+    <NewExpense />
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
@@ -48,6 +49,7 @@ const App = () => {
       />
     </Card>
   );
+
 };
 
 export default App;
