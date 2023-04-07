@@ -1,9 +1,20 @@
 import Card from "./Expenses/UI/Card";
 import ExpenseItem from "./Expenses/ExpenseItem";
+import ExpensesFilter from "./Expenses/ExpensesFilter";
 import NewExpense from "./NewExpense/NewExpense";
+import { useState } from "react";
 
 const App = () => {
-  const expenses = [
+  const Expenses = (props) => {
+    const [filteredYear,setFilteredYear] = useState('2020');
+
+    const filterChangeHandler = selectedYear => {
+      setFilteredYear(selectedYear);
+    }
+  };
+
+  const expenses = 
+   [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -25,14 +36,17 @@ const App = () => {
     },
   ];
 
+
   const addExpenseHandler = expense =>{
     console.log('In App.js');
     console.log(expenses);
-  };
+  }; 
 
   return (
-    <Card>
+    <div>
+    <Card className='expenses'>
     <NewExpense onAddExpense={addExpenseHandler} />
+    <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
@@ -54,6 +68,7 @@ const App = () => {
         date={expenses[3].date}
       />
     </Card>
+    </div>
   );
 
 };
